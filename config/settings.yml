@@ -15,22 +15,23 @@ plugins:
     hidden: true
   mingle_default_message_body:
     default: |
-      _Thanks for installing the Mingle plugin! This is a template for the messages which will go out
-      to paired users.
+      _Thanks for installing the Mingle plugin! :smiling_face_with_three_hearts: This is a template for the messages which will go out to paired users._
 
       _Some things to note!_
-      - _You can customize the title of the message that goes out by editing the title of this post._
+      - _You can customize the title of the message that goes out by editing the title of this post_
       - _Anything **below** the horizontal line will appear in the message which goes out to matches._
       - _Note that you can use the following format to apply user-specific messaging to the template_
 
-      > Hey, %{1.name}, meet %{2.name}! They're awesome!
+      > Hey, %{1.name}, meet %{2.name}!
       > Did you know that %{1.custom_fields.fun_fact}, while %{2.custom_fields.fun_fact}?
 
-      _Customize to your heart's content!_
+      <sup>^^ PS, this works for the message title, too! :exploding_head:</sup>
+
+      _Customize to your heart's content, and be sure to report any issues [here](https://www.github.com/gdpelican/mingle/issues)!_ :star2: :star2: :star2:
 
       ------------------
 
-      Hey, the two of you should meet!
+      Hey, %{1.name}, meet %{2.name}; they're awesome! Why not schedule some time to get to know each other a little bit?
     hidden: true
   mingle_post_id:
     default: -1

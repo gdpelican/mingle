@@ -28,9 +28,8 @@ module Mingle
 
     def substitute(str, match)
       index, *methods = PARE_MATCH.match(match)[1].split('.')
-      str.gsub match, methods.reduce(users[index.to_i - 1]) do |value, method|
-        value_from(value, method)
-      end.to_s
+      substitution    = methods.reduce(users[index.to_i-1]) { |v, m| value_from(v, m) }
+      str.gsub(match, substitution.to_s)
     end
 
     def value_from(value, method)

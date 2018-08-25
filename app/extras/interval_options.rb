@@ -8,9 +8,9 @@ module Mingle
 
     def self.values
       @values ||= [
-        { name: 'mingle.interval.days', value: 'days' },
-        { name: 'mingle.interval.weeks', value: 'weeks' },
-        { name: 'mingle.interval.months', value: 'months' }
+        { name: 'mingle.interval_days', value: 'days' },
+        { name: 'mingle.interval_weeks', value: 'weeks' },
+        { name: 'mingle.interval_months', value: 'months' }
       ]
     end
 

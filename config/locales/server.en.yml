@@ -1,9 +1,7 @@
 en:
   site_settings:
     mingle_enabled: "Enable the Mingle plugin"
-    mingle_delivery_user_id: "Id of user to send mingle message. Default is -2, which is Discobot."
+    mingle_delivery_user_id: "Id of user to send mingle message. Default is -2, which is Discobot (you may have to change this if you have killed discobot!)."
     mingle_group_name: "Name of the group to mingle"
     mingle_interval_number: "Number of days/weeks/months per mingle"
     mingle_interval_type: " "
-    mingle_message_title: "Enter a title for the PM to be sent to matches"
-    mingle_message_body: "Enter a prompt to put in the PM sent to matches. You can use %{custom_field_name} to add custom user field content here."

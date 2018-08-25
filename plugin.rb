@@ -1,6 +1,6 @@
 # name: mingle
 # about: Icebreaker plugin for Discourse
-# version: 0.0.1
+# version: 0.1.0
 # authors: James Kiesel (gdpelican)
 # url: https://github.com/gdpelican/mingle
 
@@ -22,7 +22,7 @@ after_initialize do
   Mingle::Initializer.new.initialize!
 
   DiscourseEvent.on(:site_setting_saved) do |setting|
-    Mingle::Scheduler.new.reschedule! if [
+    Mingle::Scheduler.new.reschedule!(refresh: true) if [
       "mingle_enabled",
       "mingle_interval_type",
       "mingle_interval_number"

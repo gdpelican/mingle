@@ -1,7 +1,6 @@
 en:
   js:
     mingle:
-      interval:
-        days: "Days"
-        weeks: "Weeks"
-        months: "Months"
+      interval_days: "Days"
+      interval_weeks: "Weeks"
+      interval_months: "Months"
