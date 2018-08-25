@@ -22,6 +22,7 @@ en:
   site_settings:
     mingle_enabled: "Enable the Mingle plugin"
     mingle_delivery_user_id: "Id of user to send mingle message. Default is -2, which is Discobot (you may have to change this if you have killed discobot!)."
+    mingle_group_size: "Number of people who will be put into a group"
     mingle_group_name: "Name of the group to mingle"
     mingle_interval_number: "Number of days/weeks/months per mingle"
     mingle_interval_type: " "

@@ -5,6 +5,9 @@ plugins:
     default: -2
   mingle_group_name:
     default: "trust_level_1"
+  mingle_group_size:
+    default: 2
+    min: 2
   mingle_interval_number:
     default: 1
   mingle_interval_type:
