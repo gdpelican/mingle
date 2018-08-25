@@ -21,8 +21,8 @@ module Mingle
       @mingle_post ||= PostCreator.create!(
         Discourse.system_user,
         category:         Category.find_by(slug: :staff)&.id,
-        title:            SiteSetting.mingle_default_message_title,
-        raw:              SiteSetting.mingle_default_message_body,
+        title:            I18n.t("mingle.default_title"),
+        raw:              I18n.t("mingle.default_message"),
         skip_validations: true
       )
     end

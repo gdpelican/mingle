@@ -1,4 +1,24 @@
 en:
+  mingle:
+    default_title: "You've been matched for a Mingle!"
+    default_message: |
+      _Thanks for installing the Mingle plugin! :smiling_face_with_three_hearts: This is a template for the messages which will go out to paired users._
+
+      _Some things to note!_
+      - _You can customize the title of the message that goes out by editing the title of this post_
+      - _Anything **below** the horizontal line will appear in the message which goes out to matches._
+      - _Note that you can use the following format to apply user-specific messaging to the template_
+
+      > Hey, %{1.name}, meet %{2.name}!
+      > Did you know that %{1.custom_fields.fun_fact}, while %{2.custom_fields.fun_fact}?
+
+      <sup>^^ PS, this works for the message title, too! :exploding_head:</sup>
+
+      _Customize to your heart's content, and be sure to report any issues [here](https://www.github.com/gdpelican/mingle/issues)!_ :star2: :star2: :star2:
+
+      ------------------
+
+      Hey, %{1.name}, meet %{2.name}; they're awesome! Why not schedule some time to get to know each other a little bit?
   site_settings:
     mingle_enabled: "Enable the Mingle plugin"
     mingle_delivery_user_id: "Id of user to send mingle message. Default is -2, which is Discobot (you may have to change this if you have killed discobot!)."
