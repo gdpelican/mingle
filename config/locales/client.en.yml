@@ -1,0 +1,7 @@
+en:
+  js:
+    mingle:
+      interval:
+        days: "Days"
+        weeks: "Weeks"
+        months: "Months"

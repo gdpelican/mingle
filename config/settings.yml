@@ -1,0 +1,37 @@
+plugins:
+  mingle_enabled:
+    default: true
+  mingle_delivery_user_id:
+    default: -2
+  mingle_group_name:
+    default: "trust_level_1"
+  mingle_interval_number:
+    default: 1
+  mingle_interval_type:
+    enum: "Mingle::IntervalOptions"
+    default: weeks
+  mingle_default_message_title:
+    default: "You've been matched for a Mingle!"
+    hidden: true
+  mingle_default_message_body:
+    default: |
+      _Thanks for installing the Mingle plugin! This is a template for the messages which will go out
+      to paired users.
+
+      _Some things to note!_
+      - _You can customize the title of the message that goes out by editing the title of this post._
+      - _Anything **below** the horizontal line will appear in the message which goes out to matches._
+      - _Note that you can use the following format to apply user-specific messaging to the template_
+
+      > Hey, %{1.name}, meet %{2.name}! They're awesome!
+      > Did you know that %{1.custom_fields.fun_fact}, while %{2.custom_fields.fun_fact}?
+
+      _Customize to your heart's content!_
+
+      ------------------
+
+      Hey, the two of you should meet!
+    hidden: true
+  mingle_post_id:
+    default: -1
+    hidden: true
