@@ -1,0 +1,6 @@
+ru:
+  js:
+    mingle:
+      interval_days: "Дни"
+      interval_weeks: "Недели"
+      interval_months: "Месяцы"
