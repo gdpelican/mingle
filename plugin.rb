@@ -13,10 +13,19 @@ end
 mingle_require 'extras/interval_options'
 
 after_initialize do
-  mingle_require 'jobs/scheduled/mingle'
+  mingle_require 'jobs/regular/mingle'
   mingle_require 'services/initializer'
   mingle_require 'services/mixer'
+  mingle_require 'services/scheduler'
   mingle_require 'services/sender'
 
   Mingle::Initializer.new.initialize!
+
+  DiscourseEvent.on(:site_setting_saved) do |setting|
+    Mingle::Scheduler.new.reschedule! if [
+      "mingle_enabled",
+      "mingle_interval_type",
+      "mingle_interval_number"
+    ].include?(setting.name.to_s)
+  end
 end

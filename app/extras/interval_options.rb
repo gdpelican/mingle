@@ -2,7 +2,6 @@ require "enum_site_setting"
 
 module Mingle
   class IntervalOptions < EnumSiteSetting
-
     def self.valid_value?(val)
       values.any? { |v| v[:value].to_s == val.to_s }
     end
@@ -18,6 +17,5 @@ module Mingle
     def self.translate_names?
       true
     end
-
   end
 end

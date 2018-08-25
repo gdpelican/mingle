@@ -1,11 +1,15 @@
 module Jobs
-  class Mingle < Jobs::Scheduled
-    every SiteSetting.mingle_interval_number.send(SiteSetting.mingle_interval_type)
+  class Mingle < Jobs::Base
+    sidekiq_options queue: :mingle
 
     def execute(args = {})
+      return if !SiteSetting.mingle_enabled
       return log_mismingle unless mingle_pairs.presence
       mingle_pairs.each { |pair| ::Mingle::Sender.new(pair).send! }
+      Mingle::Scheduler.new.reschedule!
     end
+
+    private
 
     def mingle_pairs
       @mingle_pairs ||= ::Mingle::Mixer.new(mingle_group).mix!
@@ -16,7 +20,7 @@ module Jobs
     end
 
     def log_mismingle
-      Logger.warn "No pairs generated from Mingle, group name was #{SiteSetting.mingle_group_name}. Are you sure that group exists and has members in it?" if mingle_group.users.empty?
+      Logger.warn "No pairs generated from Mingle, group name was '#{SiteSetting.mingle_group_name}'. Are you sure that group exists and has members in it?" if mingle_group.users.empty?
     end
   end
 end
