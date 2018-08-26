@@ -1,6 +1,6 @@
 en:
   mingle:
-    default_title: "You've been matched for a Mingle!"
+    default_title: "You've been invited to mingle!"
     default_message: |
       _Thanks for installing the Mingle plugin! :smiling_face_with_three_hearts: This is a template for the messages which will go out to paired users._
 
