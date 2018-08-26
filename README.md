@@ -21,6 +21,10 @@ In order to set up a Mingle, follow these four steps:
 ### Other things you can do
 - If you'd like to set a specific time for when the next match will happen, you can do so by clicking on the clock next to the displayed scheduled time.
 - You can also change the size of the groups people are placed in (default is pairs), by changing the 'Mingle group size' option
+- Note that you can specify multiple groups to mix by using the following format for `mingle_group_name`:
+```
+group_1|group_2|group_3
+```
 
 ### If things go weird
 - If you modify either the interval type or interval number (for example, changing from 3 to 4 weeks, or 3 days to 3 weeks), Mingle will automatically reschedule the existing job for the specified time interval.
