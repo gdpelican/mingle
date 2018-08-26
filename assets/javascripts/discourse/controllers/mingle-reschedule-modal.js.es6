@@ -5,7 +5,11 @@ export default Ember.Controller.extend({
     reschedule() {
       ajax('/admin/mingle/reschedule', { method: 'POST', data: {
         at: this.model.at
-      }})
+      }}).then(() => {
+        this.send("closeModal")
+      }, () => {
+        this.set('error', true)
+      })
     }
   }
 });

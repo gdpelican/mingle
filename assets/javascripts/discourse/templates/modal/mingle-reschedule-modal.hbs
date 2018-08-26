@@ -3,6 +3,9 @@
 {{/d-modal-body}}
 
 <div class="modal-footer">
+  {{#if error}}
+    {{i18n 'generic_error'}}
+  {{/if}}
   {{d-button action="reschedule"
              label="mingle.reschedule"
              class="btn-primary"}}

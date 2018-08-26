@@ -1,1 +1,17 @@
-.mingle-modal .pika-single:not(.is-hidden) { position: fixed !important; }
+.mingle-modal .pika-single:not(.is-hidden) {
+  position: fixed !important;
+}
+
+.mingle-reschedule > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4f4f4;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.mingle-date {
+  margin-right: 8px;
+  white-space: nowrap;
+}
