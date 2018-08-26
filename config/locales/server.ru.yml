@@ -1,0 +1,7 @@
+ru:
+  site_settings:
+    mingle_enabled: "Включить плагин Mingle"
+    mingle_delivery_user_id: "Идентификатор пользователя для отправки сообщения mingle. По умолчанию -2, который Discobot (вы можете изменить это, если вы удалили discobot!)."
+    mingle_group_name: "Название группы для общения"
+    mingle_interval_number: "Количество дней/недель/месяцев на одну встречу"
+    mingle_interval_type: " "
