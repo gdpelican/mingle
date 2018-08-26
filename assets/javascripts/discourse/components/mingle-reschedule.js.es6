@@ -3,6 +3,10 @@ import { ajax } from 'discourse/lib/ajax'
 import { longDate } from 'discourse/lib/formatter'
 import showModal from 'discourse/lib/show-modal'
 
+const messageBus = () => {
+  return Discourse.__container__.lookup('message-bus:main')
+}
+
 export default Ember.Component.extend({
   @computed('filter', 'model')
   showButton() {
@@ -18,9 +22,9 @@ export default Ember.Component.extend({
 
   init() {
     this._super()
-    ajax('/admin/mingle/scheduled').then((data) => {
-      this.set('model', data)
-    })
+    const updateModel = (data) => { this.set('model', data) }
+    messageBus().subscribe('/mingle', updateModel)
+    ajax('/admin/mingle/scheduled').then(updateModel)
   },
 
   actions: {

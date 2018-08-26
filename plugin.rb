@@ -6,6 +6,12 @@
 
 enabled_site_setting :mingle_enabled
 
+MINGLE_SITE_SETTINGS = [
+  "mingle_enabled",
+  "mingle_interval_type",
+  "mingle_interval_number"
+].freeze
+
 def mingle_require(path)
   require Rails.root.join('plugins', 'mingle', 'app', path).to_s
 end
@@ -31,10 +37,10 @@ after_initialize do
   end
 
   DiscourseEvent.on(:site_setting_saved) do |setting|
-    Mingle::Scheduler.new.reschedule!(refresh: true) if [
-      "mingle_enabled",
-      "mingle_interval_type",
-      "mingle_interval_number"
-    ].include?(setting.name.to_s)
+    if MINGLE_SITE_SETTINGS.include?(setting.name.to_s)
+      SiteSetting.refresh!
+      at = SiteSetting.mingle_interval_number.send(SiteSetting.mingle_interval_type).from_now
+      Mingle::Scheduler.new.reschedule!(at: at)
+    end
   end
 end

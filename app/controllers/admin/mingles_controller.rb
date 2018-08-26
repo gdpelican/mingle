@@ -1,7 +1,7 @@
 class Admin::MinglesController < ApplicationController
   def reschedule
-    Mingle::Scheduler.new.reschedule!(refresh: true, at: Time.zone.parse(params.require(:at)))
-    respond_with_time
+    Mingle::Scheduler.new.reschedule!(at: Time.zone.parse(params.require(:at)))
+    render json: { success: :ok }
   end
 
   def scheduled
