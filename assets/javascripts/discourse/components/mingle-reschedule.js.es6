@@ -5,7 +5,7 @@ import showModal from 'discourse/lib/show-modal'
 export default Ember.Component.extend({
   @computed('filter')
   showButton() {
-    return this.filter == 'mingle'
+    return Discourse.SiteSettings.mingle_enabled && this.filter == 'mingle'
   },
 
   actions: {

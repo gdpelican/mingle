@@ -1,6 +1,7 @@
 plugins:
   mingle_enabled:
     default: false
+    client: true
   mingle_delivery_user_id:
     default: -2
   mingle_group_name:
