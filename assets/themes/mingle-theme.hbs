@@ -1,0 +1,16 @@
+<script type="text/x-handlebars" data-template-name="admin/templates/site-settings-category">
+  {{#if filteredContent}}
+    {{#d-section class="form-horizontal settings"}}
+      {{#each filteredContent as |setting|}}
+        {{site-setting setting=setting}}
+      {{/each}}
+      {{plugin-outlet name="after-site-setting-filter" args=(hash filter=adminSiteSettings.filter)}}
+      {{#if category.hasMore}}
+        <p class="warning">{{i18n 'admin.site_settings.more_than_30_results'}}</p>
+      {{/if}}
+    {{/d-section}}
+  {{else}}
+    <br/>
+    {{i18n 'admin.site_settings.no_results'}}
+  {{/if}}
+</script>

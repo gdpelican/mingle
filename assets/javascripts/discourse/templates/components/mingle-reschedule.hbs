@@ -1,7 +1,15 @@
 {{#if showButton}}
-  <div class="mingle-date">{{date}}</div>
-  {{d-button action="reschedule"
-             class="btn-primary"
-             title="mingle.reschedule"
-             icon="clock-o"}}
+  <div class="mingle-reschedule row setting">
+    <div class='setting-label'>
+       <h3>mingle next scheduled run</h3>
+    </div>
+    <div class="setting-value">
+      {{input value=date disabled=true}}
+    </div>
+    {{d-button action="reschedule"
+               class="btn-primary"
+               label="mingle.reschedule"
+               title="mingle.reschedule"
+               icon="clock-o"}}
+  </div>
 {{/if}}

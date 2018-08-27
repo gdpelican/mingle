@@ -1,7 +1,7 @@
 en:
   js:
     mingle:
-      reschedule: Reschedule
+      reschedule: Change
       modal_title: Reschedule the next Mingle event
       interval_days: "Days"
       interval_weeks: "Weeks"

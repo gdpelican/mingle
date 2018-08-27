@@ -18,6 +18,7 @@ end
 
 register_asset 'stylesheets/mingle.scss'
 mingle_require 'extras/interval_options'
+mingle_require 'extras/theme_component_seed'
 
 after_initialize do
   mingle_require 'controllers/admin/mingles_controller'
@@ -27,6 +28,7 @@ after_initialize do
   mingle_require 'services/scheduler'
   mingle_require 'services/sender'
 
+  Mingle::ThemeComponentSeed.new.seed!
   Mingle::Initializer.new.initialize!
 
   Discourse::Application.routes.append do

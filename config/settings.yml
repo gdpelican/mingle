@@ -17,3 +17,6 @@ plugins:
   mingle_post_id:
     default: -1
     hidden: true
+  mingle_theme_id:
+    default: -1
+    hidden: true
