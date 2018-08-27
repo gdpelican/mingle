@@ -1,6 +1,8 @@
 ru:
   js:
     mingle:
+      reschedule: Перепланирование
+      modal_title: Перенос следующего события Mingle
       interval_days: "Дни"
       interval_weeks: "Недели"
       interval_months: "Месяцы"
