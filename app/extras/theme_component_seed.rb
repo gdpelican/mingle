@@ -21,11 +21,13 @@ class Mingle::ThemeComponentSeed
       name: :mingle_admin_theme,
       user_id: -1,
       hidden: true
-    ).theme_fields.create!(
-      name: :head_tag,
-      target_id: Theme.targets[:common],
-      value: open(Rails.root.join('plugins', 'mingle', 'assets', 'themes', 'mingle-theme.hbs')).read
-    ).id
+    ).tap do |theme|
+      theme.theme_fields.create!(
+        name: :head_tag,
+        target_id: Theme.targets[:common],
+        value: open(Rails.root.join('plugins', 'mingle', 'assets', 'themes', 'mingle-theme.hbs')).read
+      )
+    end.id
   end
 
   def seed_relations!
