@@ -38,7 +38,7 @@ after_initialize do
     end
   end
 
-  DiscourseEvent.on(:site_setting_saved) do |setting|
+  DiscourseEvent.on(:site_setting_changed) do |setting|
     if MINGLE_SITE_SETTINGS.include?(setting.name.to_s)
       SiteSetting.refresh!
       at = SiteSetting.mingle_interval_number.send(SiteSetting.mingle_interval_type).from_now
